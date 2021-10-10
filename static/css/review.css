@@ -1,0 +1,25 @@
+.two_btn{
+	padding: 1em;
+	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto;
+}
+
+.two_btn-left{
+	grid-column: 1;
+	padding: 0 1em;
+	align-content: center;
+	text-align: left;
+}
+
+.two_btn-right{
+	grid-column: 3;
+	padding: 0 1em;
+	align-content: center;
+	text-align: right;
+}
+
+.star{
+    margin:-0.15em;
+}

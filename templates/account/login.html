@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/account.css' %}"/>
+<div class="login_signup">
+    <div class = "signup">
+        <div>Inscrivez-vous maintenant</div>
+        <div>
+            <a href="{% url 'signup' %}" target="_blank"> <input type="button" value="S'inscrire"> </a>
+        </div>
+    </div>
+    <div class = 'login'>
+        <div>Connectez-Vous</div>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div>
+                {{form.username}}
+            </div>
+            <div>
+                {{form.password}}
+            </div>
+            <div>
+                <input type="submit" name = "signin" value="Se connecter">
+            </div>
+        </form>
+        <div>
+        {% for message in messages%}
+            <p id="messages">{{message}}</p>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

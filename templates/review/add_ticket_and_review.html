@@ -1,0 +1,42 @@
+{% extends 'main.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/review.css' %}"/>
+
+<h2>Créer une critique</h2>
+<form method="POST" action="{% url 'add_ticket_and_review' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class = "frame_div">
+        <div class = "add_ticket">
+            <h3>Livre / Article</h3>
+            <div class="title_lign_form">Titre</div>
+            {% render_field ticket_form.title class="form_style_width_1" %}
+            <div class="title_lign_form">Description</div>
+            {% render_field ticket_form.description class="form_style_width_1" %}
+            <div class="title_lign_form">Image</div>
+            <div class="title_lign_form">{{ticket_form.image}}</div>
+        </div>
+    </div>
+    <div class = "frame_div">
+        <div class = "add_review">
+            <h3>Critique</h3>
+            <div class="title_lign_form">Titre</div>
+            {% render_field review_form.headline class="form_style_width_1" %}
+            <div class="title_lign_form">Note</div>
+            <div class="title_lign_form">
+                <input type="radio" name="rating" value="0" id="0" /> <label for="0">0</label>
+                <input type="radio" name="rating" value="1" id="1" /> <label for="1">1</label>
+                <input type="radio" name="rating" value="2" id="2" /> <label for="2">2</label>
+                <input type="radio" name="rating" value="3" id="3" checked="checked"/> <label for="3">3</label>
+                <input type="radio" name="rating" value="4" id="4" /> <label for="4">4</label>
+                <input type="radio" name="rating" value="5" id="5" /> <label for="5">5</label>
+            </div>
+            <div class="title_lign_form">Commentaire</div>
+            {% render_field review_form.body class="form_style_width_1" %}
+            <div class="pos_right"><input type="submit" name="Envoyer"></div>
+        </div>
+    </div>
+</form>
+{% endblock %}
+

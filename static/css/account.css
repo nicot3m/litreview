@@ -1,0 +1,34 @@
+.login_signup{
+	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: auto;
+	font-size: 1em;
+}
+
+.signup{
+	grid-column: 1;
+	margin: auto;
+	padding: 1em;
+	align-content: center;
+	text-align: center;
+}
+
+.login{
+	grid-column: 2;
+	padding: 1em;
+	align-content: center;
+	text-align: center;
+}
+
+.table_user_follow{
+    border-collapse: collapse;
+    table-layout: auto;
+    width: 80%;
+    text-align: center;
+    margin:auto;
+}
+
+.table_user_follow td{
+    border-style: solid;
+}

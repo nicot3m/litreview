@@ -1,0 +1,7 @@
+django == 3.2
+pillow == 8.2.0
+django-filter == 2.4.0
+django-cleanup == 5.2.0
+django-widget-tweaks == 1.4.8
+flake8==3.9.1
+flake8-html==0.4.1

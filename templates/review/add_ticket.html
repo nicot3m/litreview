@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/review.css' %}"/>
+
+<div class = "add_ticket">
+    <h2>Créer un ticket</h2>
+    <form method="POST" action="{% url 'add_ticket' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="title_lign_form">Titre</div>
+        {% render_field form.title class="form_style_width_1" %}
+        <div class="title_lign_form">Description</div>
+        {% render_field form.description class="form_style_width_1" %}
+        <div class="title_lign_form">Image</div>
+        <div class="title_lign_form">{{form.image}}</div>
+        <div class="pos_right"><input type="submit"></div>
+    </form>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,174 @@
+@font-face {
+	font-family: 'roboto_condensedregular';
+	src: url('font/RobotoCondensed-Regular-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+html {
+    background-color: white;
+	font-family: 'roboto_condensedregular';
+	color: black;
+}
+
+body{
+	margin: auto;
+	min-width: 480px;
+}
+
+header {
+	padding: 0.5em 1em 0.5em 1em;
+	margin: 1em 1em 0em 1em;
+	border: 3px black solid;
+	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto;
+	background-color: #FAFAFA;
+	z-index: 1;
+}
+
+.user_connected {
+	grid-column: 1;
+	font-size: 1em;
+	padding-top: 0em;
+	padding-left: 0em;
+	align-content: center;
+	text-align: left;
+}
+
+.main_title {
+	grid-column: 2;
+	align-content: center;
+	margin: auto;
+}
+
+.main_menu {
+	padding-top: 0em;
+	padding-right: 0em;
+	grid-column: 3;
+	margin: auto 1em;
+	align-content: center;
+	text-align: right;
+}
+
+.main_menu ul{
+    margin: 0;
+}
+
+.main_menu li {
+	display: inline;
+	padding-left: 0.5em;
+}
+
+.main_menu li a {
+	font-size: 0.8em;
+	text-decoration: none;
+}
+
+main {
+	border-right:black solid;
+	border-left:black solid;
+	padding: 1em;
+	margin: 0em 1em 0em 1em;
+	text-align: center;
+	background-color: #FAFAFA;
+}
+
+.block_content{
+ width:80%;
+ margin: auto;
+}
+
+h1{
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1em;
+	margin: 0;
+
+}
+
+h2{
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1em;
+}
+
+h3{
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1em;
+	text-align: left;
+}
+
+p{
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1em;
+	padding: 0.5em;
+}
+
+.smaller{
+    font-size: 0.8em;
+}
+
+.bigger{
+    font-size: 1.2em;
+    padding-bottom: 0.5em;
+}
+
+::placeholder {
+    color: black;
+    font-size: 1em;
+    text-align: center;
+}
+
+.form_style_width_1{
+    width: 100%;
+}
+
+.pos_left{
+    text-align: left;
+}
+
+.pos_right{
+    text-align: right;
+}
+
+.pos_up {
+    margin-top: -0.5em;
+}
+
+.pos_low {
+    margin-top: 0.5em;
+}
+
+.title_lign_form {
+    text-align: left;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.frame_div{
+    border: 3px black solid;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+	text-align: left;
+}
+
+footer {
+	padding: 1em;
+	margin: 0em 1em 1em 1em;
+	border: 3px black solid;
+	text-align: center;
+	background-color: #FAFAFA;
+}
+
+.image_logo_footer {
+	width: 10em;
+}
+
+.image_logo_footer {
+	width: 6em;
+}

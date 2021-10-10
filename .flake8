@@ -1,0 +1,29 @@
+[flake8]
+
+exclude =
+    .git,
+	.idea
+	.gitignore,
+	.flake8,
+	readme.md,
+	requirements.txt,
+	P9_01_lien_repository_GitHub.txt,
+	database/,
+	env/,
+	flake-report/,
+	account/__pycache__/,
+	account/migrations/,
+	litreview/__pycache__/,
+	litreview/migrations/,
+	review/__pycache__/,
+	review/migrations/,
+	media/,
+	static/,
+	templates/,
+	db.sqlite3,
+	account/tests.py
+	review/tests.py
+
+max-line-length=119
+format=html
+htmldir=flake-report

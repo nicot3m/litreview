@@ -1,0 +1,26 @@
+<div class = "frame_div">
+    <div>
+        {% if post.user == request.user %}
+            Vous avez demandé une critique
+        {% else %}
+            {{post.user}} a demandé une critique
+        {% endif %}
+    </div>
+    <div class="pos_right smaller pos_up">{{post.time_created}}</div>
+    <div class="pos_left pos_low">{{post.title}}</div>
+    <div class="pos_left pos_low">{{post.description}}</div>
+    <p>
+        {% if post.image %}
+            <img src="/media/{{post.image}}" width="100" height="150"
+        {% endif %}
+    </p>
+    <div class="pos_right">
+        {% if post not in ticket_with_review %}
+            <a href="{% url 'add_review' id_ticket=post.id %}"><input type="button" value="Créer une critique"> </a>
+        {% endif %}
+        {% if edit_post == True %}
+            <a href="{% url 'edit_ticket' id_ticket=post.id %}"><input type="button" value="Modifier"></a>
+            <a href="{% url 'delete_ticket' id_ticket=post.id %}" > <input type="button" value="Supprimer"> </a>
+        {% endif %}
+    </div>
+</div>

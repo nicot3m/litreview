@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/account.css' %}"/>
+    <div>
+        <h2>Suivre d'autres utilisateurs</h2>
+		<p>Liste des utilisateurs:
+		{% for user in all_users %}
+			* {{user}}
+		{% endfor %}
+		</p>
+        <form method="POST" action="{% url 'subscribe'%}">
+            {% csrf_token %}
+			<p>Choisir un utilisateur: {{form.username}} <input type="submit" value="Envoyer"></p>
+            <p>{{message}}</p>
+        </form>
+    </div>
+
+    <div>
+        <h2>Abonnements</h2>
+        <table class="table_user_follow">
+        <tbody>
+        {% for followed in followed_user_list %}
+            <tr>
+                <td width="70%">{{followed.followed_user}} </td>
+                <td><a href="{% url 'unsubscribe' id_user_follow=followed.id %}">Désabonner</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        </table>
+    </div>
+    <div class="pos_center">
+        <h2>Abonnés</h2>
+        <table class="table_user_follow">
+        <tbody>
+        {% for subscribers in subscriber_list %}
+            <tr><td>{{subscribers.user}}</td></tr>
+        {% endfor %}
+        </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}

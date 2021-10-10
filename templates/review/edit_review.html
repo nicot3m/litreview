@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/review.css' %}"/>
+
+<h2>Modifier votre critique</h2>
+<div class="frame_div">
+    <h3>Vous êtes en train de poster en réponse à</h3>
+    {% include 'review/ticket_snippet.html' with post=review.ticket%}
+</div>
+<form method="POST" action="">
+    {% csrf_token %}
+    <fieldset>
+    <div class = "add_review">
+        <h3>Critique</h3>
+        <p class="pos_left">Titre</p>
+        {% render_field form.headline class="form_style_width_1" %}
+        <p class="pos_left">Note</p>
+        <p class="pos_left">
+            <input type="radio" name="rating" value="0" id="0" /> <label for="0">0</label>
+            <input type="radio" name="rating" value="1" id="1" /> <label for="1">1</label>
+            <input type="radio" name="rating" value="2" id="2" /> <label for="2">2</label>
+            <input type="radio" name="rating" value="3" id="3" checked="checked"/> <label for="3">3</label>
+            <input type="radio" name="rating" value="4" id="4" /> <label for="4">4</label>
+            <input type="radio" name="rating" value="5" id="5" /> <label for="5">5</label>
+        </p>
+        <p class="pos_left">Commentaire</p>
+        {% render_field form.body class="form_style_width_1" %}
+        <p class="pos_right"><input type="submit" name="Envoyer"></p>
+    </div>
+    </fieldset>
+</form>
+{% endblock %}
+

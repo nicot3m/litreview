@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/review.css' %}"/>
+
+<h2>Mon flux</h2>
+<div>
+    {% for message in messages%}
+        <p id="messages">{{message}}</p>
+    {% endfor %}
+</div>
+<div class="two_btn">
+    <div class="two_btn-left">
+        <a href="{% url 'add_ticket' %}"> <input type="button" value="Demander une critique"> </a>
+    </div>
+    <div class="two_btn-right">
+        <a href="{% url 'add_ticket_and_review' %}"> <input type="button" value="Créer une critique"> </a>
+    </div>
+</div>
+{% for post in posts %}
+    {% if post.content_type == 'TICKET' %}
+        {% include 'review/ticket_snippet.html' with edit_post=False %}
+    {% elif post.content_type == 'REVIEW' %}
+        {% include 'review/review_snippet.html' with edit_post=False %}
+    {% endif %}
+{% endfor %}
+
+{% endblock %}
+

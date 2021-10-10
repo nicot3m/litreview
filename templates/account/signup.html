@@ -1,0 +1,41 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/account.css' %}"/>
+
+    <div>
+        <h2>Inscrivez-vous</h2>
+    </div>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div>
+            {{form.username}}
+        </div>
+        <div>
+            {{form.password1}}
+        </div>
+        <div>
+            {{form.password2}}
+        </div>
+        <div>
+            <input type="submit" name = "signup" value="S'inscrire">
+        </div>
+    </form>
+    <div>
+        {% if form.errors %}
+            <strong>* Erreur dans la saisie du nom d'utilisateur ou du mot de passe:</strong>
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <div>
+                        <I>{{ error|escape }}</I>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div>
+        <p>Déjà inscrit? <a href="{% url 'login' %}" target="_blank"> <input type="button" value="Retourner"> </a></p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/review.css' %}"/>
+
+<h2>Vos posts</h2>
+
+{% for post in posts %}
+    {% if post.content_type == 'TICKET' %}
+        {% include 'review/ticket_snippet.html' with edit_post=True %}
+    {% elif post.content_type == 'REVIEW' %}
+        {% include 'review/review_snippet.html' with edit_post=True %}
+    {% endif %}
+{% endfor %}
+
+{% endblock %}

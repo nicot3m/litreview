@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>LITReview</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"/>
+    </head>
+    <body>
+        <header>
+            {% if user.is_authenticated %}
+            <div class="user_connected">
+                <p>Connecté en tant que, {{request.user}}</p>
+            </div>
+            {% endif %}
+            <div class="main_title">
+                <h1>LITReview</h1>
+            </div>
+            {% if user.is_authenticated %}
+            <nav class = "main_menu">
+                {% include 'base/navbar.html' %}
+            </nav>
+            {% endif %}
+        </header>
+        <main>
+            <div class="block_content">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </main>
+        <footer>
+            <div class="logo_footer">
+                <img class="image_logo_footer" src="{% static 'images/logo.png' %}" alt="logo" />
+            </div>
+        </footer>
+    </body>
+</html>
